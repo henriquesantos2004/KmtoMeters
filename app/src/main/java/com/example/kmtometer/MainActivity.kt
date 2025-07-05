@@ -1,46 +1,33 @@
 package com.example.kmtometer
 
+// Importações necessárias para o Jetpack Compose funcionar corretamente
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.*
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.kmtometer.ui.theme.KmtoMeterTheme
+import androidx.compose.ui.graphics.Color
 
+import com.example.kmtometer.ui.theme.KmtoMeterTheme
+// A classe principal da app — é o ponto de entrada
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Aqui define-se o conteúdo da app com Jetpack Compose
         setContent {
-            KmtoMeterTheme {
-                // A surface container using the 'background' color from the theme
+            KmtoMeterTheme { // Aplica o tema definido no projeto
                 Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+                    modifier = Modifier.fillMaxSize(), // Ocupar todo o ecrã
+                    color = Color(0xFF121B3A) // Define o fundo azul escuro
                 ) {
-                    Greeting("Android")
+                    ecraConversor() // Chama a função que desenha o ecrã principal
                 }
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Helloo $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    KmtoMeterTheme {
-        Greeting("Android")
-    }
+fun ecraConversor() {
 }
