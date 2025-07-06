@@ -26,10 +26,10 @@ class MainActivity : ComponentActivity() {
         setContent {
             KmtoMeterTheme { // Aplica o tema definido no projeto
                 Surface(
-                    modifier = Modifier.fillMaxSize(), // Ocupar todo o ecrã
+                    modifier = Modifier.fillMaxSize(), // Ocupar ecra tudo
                     color = Color(0xFF121B3A) // Define o fundo azul escuro
                 ) {
-                    ecraConversor() // Chama a função que desenha o ecrã principal
+                    EcraConversor() // Chama a função que desenha o ecrã principal
                 }
             }
         }
@@ -38,7 +38,7 @@ class MainActivity : ComponentActivity() {
 
 // Esta função desenha o ecrã do conversor
 @Composable
-fun ecraConversor() {
+fun EcraConversor() {
     // "input" guarda o valor que o utilizador escreve
     var input by remember { mutableStateOf("") }
 
@@ -48,7 +48,7 @@ fun ecraConversor() {
     // Box serve para alinhar tudo ao centro do ecrã
     Box(
         modifier = Modifier
-            .fillMaxSize()
+            .fillMaxSize() // Ocupar comprimento total
             .background(Color(0xFF121B3A)), // Fundo azul escuro
         contentAlignment = Alignment.Center
     ) {
